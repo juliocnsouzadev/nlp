@@ -42,7 +42,7 @@ class Transformer(tf.keras.Model):
 
     def create_look_ahead_mask(self, sequence):
         sequence_length = tf.shape(sequence)[1]
-        look_ahead_mask = tf.linilg.band_part(
+        look_ahead_mask = tf.linalg.band_part(
             tf.ones((sequence_length, sequence_length)), -1, 0
         )
         return look_ahead_mask
